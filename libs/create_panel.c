@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   file_manipulation.c                                :+:    :+:            */
+/*   create_panel.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 14:26:06 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/08/31 15:47:09 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/headers.h"
 #include "headers/variables.h"
 
-static	int	ft_file_size(char *file_name, int cnt)
+static	int	file_size(char *file_name, int cnt)
 {
 	int		fd;
 	int		nchr;
@@ -39,17 +39,48 @@ static	int	ft_file_size(char *file_name, int cnt)
 	return (file_size);
 }
 
-char		*ft_create_map(char *file_name)
+char		**create_panel(char *file_name)
 {
 	int		fd;
 	int		file_size;
-	char	*map_array;
+	char	*panel_array;
+	char	**panel;
 
-	file_size = ft_file_size(file_name, INIT_BUFFER);
+	file_size = file_size(file_name, INIT_BUFFER);
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		fd = 0;
-	map_array = (char *)malloc(sizeof(char) * file_size);
-	read(fd, map_array, file_size);
-	return (map_array);
+	panel_array = (char *)malloc(sizeof(char) * file_size);
+	read(fd, panel_array, file_size);
+	panel = create_panel_from_array(panel_array);
+	return (panel_array);
+}
+
+char	**create_panel_from_array(char *array)
+{
+	int i;
+	int j;
+	int z;
+	int rows;
+	int cols;
+	char **panel;
+
+	i = 0;
+	z = 0;
+	rows = get_row_num(array);
+	cols = get_col_num(array);
+	panel = (char **)malloc(sizeof(char *) * rows);
+	while (i < rows)
+	{
+		j = 0;
+		panel[i] = (char *)malloc(sizeof(char) * cols);
+		while (j < cols)
+		{
+			panel[i][j] = array[z]
+			j++;
+			z++;
+		}
+		i++;
+	}
+	return (panel);
 }
