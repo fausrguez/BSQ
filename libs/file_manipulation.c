@@ -6,19 +6,19 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 13:00:23 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 13:16:49 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/headers.h"
 #include "headers/variables.h"
 
-static	int		ft_file_size(char *file_name, int cnt)
+static	int	ft_file_size(char *file_name, int cnt)
 {
-	int fd;
-	int nchr;
-	char **buffer;
-	int file_size;
+	int		fd;
+	int		nchr;
+	int		file_size;
+	char	**buffer;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
@@ -39,11 +39,11 @@ static	int		ft_file_size(char *file_name, int cnt)
 	return (file_size);
 }
 
-char	**ft_create_map(char *file_name)
+char		**ft_create_map(char *file_name)
 {
-	int fd;
-	char **map_array;
-	int file_size;
+	int		fd;
+	int		file_size;
+	char	**map_array;
 
 	file_size = ft_file_size(file_name, INIT_BUFFER);
 	fd = open(file_name, O_RDONLY);
@@ -52,4 +52,4 @@ char	**ft_create_map(char *file_name)
 	map_array = (char **)malloc(sizeof(char *) * file_size);
 	read(fd, map_array, file_size);
 	return (map_array);
-}	
+}

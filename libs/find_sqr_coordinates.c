@@ -6,31 +6,30 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:06:26 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 13:06:29 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 13:45:12 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/functions.h"
 
-int *find_sqr_coordinates(char **panel, int *panel_size, char obstacle, int *max_size)
+void	find_sqr_coordinates(
+	char **panel,
+	int *panel_size,
+	int *coordinates,
+	int *max_size)
 {
 	int row;
 	int col;
-	int max_size;
 	int size;
-	int *coordinates;
 
 	row = 0;
-	col = 0;
 	size = *max_size;
-	coordinates[0] = 0;
-	coordinates[1] = 0;
 	while (row < panel_size[0])
 	{
 		col = 0;
 		while (col < panel_size[1])
 		{
-			while (is_sqr_valid(panel, row, col, size, obstacle))
+			while (is_sqr_valid(panel, coordinates, size))
 			{
 				size++;
 			}
@@ -44,5 +43,4 @@ int *find_sqr_coordinates(char **panel, int *panel_size, char obstacle, int *max
 		}
 		row++;
 	}
-	return (coordinates);
 }
