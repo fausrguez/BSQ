@@ -6,14 +6,15 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 15:15:57 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 16:58:28 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/headers.h"
 #include "headers/variables.h"
+#include "headers/functions.h"
 
-static	int	ft_file_size(char *file_name, int cnt)
+static	int		ft_file_size(char *file_name, int cnt)
 {
 	int		fd;
 	int		nchr;
@@ -39,7 +40,7 @@ static	int	ft_file_size(char *file_name, int cnt)
 	return (file_size);
 }
 
-char		*ft_create_panel(char *file_name)
+char			*create_array(char *file_name)
 {
 	int		fd;
 	int		file_size;
@@ -52,4 +53,44 @@ char		*ft_create_panel(char *file_name)
 	panel_array = (char *)malloc(sizeof(char) * file_size);
 	read(fd, panel_array, file_size);
 	return (panel_array);
+}
+
+char			**create_panel_from_array(char *array, int rows, int cols)
+{
+	int		i;
+	int		j;
+	int		z;
+	char	**panel;
+
+	i = 0;
+	z = 0;
+	panel = (char **)malloc(sizeof(char *) * rows);
+	while (i < rows)
+	{
+		j = 0;
+		panel[i] = (char *)malloc(sizeof(char) * cols);
+		while (j < cols)
+		{
+			panel[i][j] = array[z];
+			j++;
+			z++;
+		}
+		i++;
+	}
+	return (panel);
+}
+
+char			**create_panel(char *array)
+{
+	int		rows;
+	int		cols;
+	char	**panel;
+
+	rows = 0;
+	cols = 0;
+	panel = create_panel_from_array(array, rows, cols);
+	rows = get_row_num(array);
+	cols = get_col_num(array);
+	free(array);
+	return (panel);
 }
