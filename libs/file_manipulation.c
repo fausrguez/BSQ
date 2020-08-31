@@ -6,16 +6,12 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 10:51:47 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/08/31 12:32:54 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-
-#define MIN_LINES 40
-#define MIN_CHARS 80
-#define INIT_BUFFER 3200
+#include "headers/headers.h"
+#include "headers/variables.h"
 
 int		ft_file_size(char *file_name, int cnt)
 {
