@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:27:35 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 17:02:11 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/08/31 17:34:42 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ char	get_obst_char(char **map_array);
 char	get_sqr_char(char **map_array);
 int		get_row_num(char *map_array);
 int		get_col_num(char *map_array);
-int		get_panel_size(char **panel);
+int		*get_panel_size(char **panel);
 #endif
