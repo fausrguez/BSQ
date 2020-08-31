@@ -6,9 +6,11 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 12:00:56 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 13:37:55 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 17:41:43 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "headers/functions.h"
 
 int	is_sqr_valid(
 	char **panel,
@@ -21,7 +23,7 @@ int	is_sqr_valid(
 	int		j;
 	char	obstacle;
 
-	obstacle = get_obstacle();
+	obstacle = get_obst_char(panel);
 	row = coordinates[0];
 	col = coordinates[1];
 	i = 0;
