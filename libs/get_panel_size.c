@@ -6,32 +6,50 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 16:25:01 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/08/31 16:36:29 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/functions.h"
 
-char	get_empty_char(char **map_array)
+int		get_row_num(char *map_array)
 {
-	char empty;
+	int row_num;
 
-	empty = map_array[0][1];
-	return (empty);
+	row_num = map_array[0] - 48;
+	return (row_num);
 }
 
-char	get_obst_char(char **map_array)
+int		get_col_num(char *map_array)
 {
-	char obstacle;
+	int i;
 
-	obstacle = map_array[0][2];
-	return (obstacle);
+	i = 0;
+	while (map_array[i] != '\n')
+		i++;
+	return (i);
 }
 
-char	get_sqr_char(char **map_array)
+int		*get_panel_size(char **panel)
 {
-	char square;
+	int i;
+	int j;
+	int panel_size[2];
+	int *size;
 
-	square = map_array[0][3];
-	return (square);
+	i = 0;
+	j = 0;
+	while (panel[i][j] != '\0')
+	{
+		if (panel[i][j] == '\n')
+		{
+			i++;
+			j = 0;
+		}
+		j++;
+	}
+	panel_size[0] = i;
+	panel_size[1] = j;
+	size = panel_size;
+	return (size);
 }
