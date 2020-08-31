@@ -6,14 +6,14 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 12:32:54 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 13:00:23 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/headers.h"
 #include "headers/variables.h"
 
-int		ft_file_size(char *file_name, int cnt)
+static	int		ft_file_size(char *file_name, int cnt)
 {
 	int fd;
 	int nchr;
