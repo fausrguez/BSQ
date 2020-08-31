@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 15:47:09 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/08/31 15:59:01 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char		**create_panel(char *file_name)
 	panel_array = (char *)malloc(sizeof(char) * file_size);
 	read(fd, panel_array, file_size);
 	panel = create_panel_from_array(panel_array);
-	return (panel_array);
+	return (panel);
 }
 
 char	**create_panel_from_array(char *array)
