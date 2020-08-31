@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 14:43:40 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 14:44:33 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 14:49:16 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@ void	add_sqr_to_panel(char **panel, int *coordinates, int size)
 {
 	int		i;
 	int		j;
-	char	obstacle;
+	char	sqr_char;
 
-	obstacle = get_obstacle();
+	sqr_char = get_sqr_char();
 	i = 0;
 	j = 0;
 	while (i < size)
@@ -24,7 +24,7 @@ void	add_sqr_to_panel(char **panel, int *coordinates, int size)
 		j = 0;
 		while (j < size)
 		{
-			panel[coordinates[0] + i][coordinates[1] + j] = obstacle;
+			panel[coordinates[0] + i][coordinates[1] + j] = sqr_char;
 			j++;
 		}
 		i++;
