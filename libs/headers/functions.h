@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:27:35 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 17:34:42 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/08/31 17:42:42 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	find_sqr_coordinates(
 void	add_sqr_to_panel(char **panel, int *coordinates, int size);
 void	print_char(char c);
 void	print_str(char *str);
-void	print_panel(char **panel, int **panel_size);
+void	print_panel(char **panel, int *panel_size);
 int		get_row_num(char *map_array);
 int		get_col_num(char *map_array);
 char	get_empty_char(char **map_array);

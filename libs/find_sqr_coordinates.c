@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:06:26 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 13:45:12 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 16:46:43 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	find_sqr_coordinates(
 			{
 				size++;
 			}
-			if (size > max_size)
+			if (size > *max_size)
 			{
 				coordinates[0] = row;
 				coordinates[1] = col;
