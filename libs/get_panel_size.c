@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_chars.c                                        :+:    :+:            */
+/*   get_panel_size.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 17:47:07 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 09:34:52 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/functions.h"
+#include "headers/headers.h"
 
 int		get_row_num(char *map_array)
 {
@@ -36,22 +37,18 @@ int		*get_panel_size(char **panel)
 {
 	int i;
 	int j;
-	int panel_size[2];
 	int *size;
 
 	i = 0;
-	j = 0;
-	while (panel[i][j] != '\0')
+	size = (int *)malloc(sizeof(int) * 2);
+	while (panel[i] != '\0')
 	{
-		if (panel[i][j] == '\n')
-		{
-			i++;
-			j = 0;
-		}
-		j++;
+		j = 0;
+		while (panel[i][j] == '\0')
+			j++;
+		i++;
 	}
-	panel_size[0] = i;
-	panel_size[1] = j;
-	size = panel_size;
+	size[0] = i;
+	size[1] = j;
 	return (size);
 }
