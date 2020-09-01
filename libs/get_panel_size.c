@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/01 12:20:31 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/01 17:53:15 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		get_row_num(char *map_array)
 	int row_num;
 
 	row_num = map_array[0] - 48;
-	return (row_num + 1);
+	return (row_num);
 }
 int		get_col_num(char *map_array)
 {
