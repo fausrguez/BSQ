@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
+*                                                        ::::::::            */
 /*   create_panel.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 16:58:28 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 09:05:36 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ char			**create_panel(char *array)
 
 	rows = 0;
 	cols = 0;
-	panel = create_panel_from_array(array, rows, cols);
 	rows = get_row_num(array);
 	cols = get_col_num(array);
+	panel = create_panel_from_array(array, rows, cols);
 	free(array);
 	return (panel);
 }
