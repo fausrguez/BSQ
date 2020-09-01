@@ -6,12 +6,12 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 12:00:56 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/01 18:00:45 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 18:03:39 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "functions.h"
-#include "headers.h"
+#include "headers/functions.h"
+#include "headers/headers.h"
 
 int	is_sqr_valid(
 	char **panel,
