@@ -6,11 +6,12 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/01 09:32:19 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 09:34:52 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/functions.h"
+#include "headers/headers.h"
 
 int		get_row_num(char *map_array)
 {
