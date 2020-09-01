@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/01 09:34:52 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 12:11:40 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		*get_panel_size(char **panel)
 			j++;
 		i++;
 	}
-	size[0] = i;
+	size[0] = i + 1;
 	size[1] = j;
 	return (size);
 }
