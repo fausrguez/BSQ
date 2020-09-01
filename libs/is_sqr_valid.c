@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 12:00:56 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 17:41:43 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/01 10:14:35 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	is_sqr_valid(
 	obstacle = get_obst_char(panel);
 	row = coordinates[0];
 	col = coordinates[1];
+	print_char('x');
 	i = 0;
 	j = 0;
 	while (i < size && panel[row + i][col + j] != '\0')
@@ -40,5 +41,6 @@ int	is_sqr_valid(
 		}
 		i++;
 	}
+	print_char('y');
 	return (1);
 }

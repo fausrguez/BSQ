@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/01 09:13:09 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 11:16:46 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char			**create_panel_from_array(char *array, int rows, int cols)
 
 	i = 0;
 	z = 0;
-	panel = (char **)malloc(sizeof(char *) * rows);
+	panel = (char **)malloc(sizeof(char *) * rows + 1);
 	while (i < rows)
 	{
 		j = 0;
@@ -86,11 +86,11 @@ char			**create_panel(char *array)
 	int		cols;
 	char	**panel;
 
+	// printf("->> %c",array[0]);
 	rows = 0;
 	cols = 0;
 	rows = get_row_num(array);
 	cols = get_col_num(array);
 	panel = create_panel_from_array(array, rows, cols);
-	free(array);
 	return (panel);
 }
