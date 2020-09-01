@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 14:44:46 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 17:42:32 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/08/31 18:00:08 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_panel(char **panel, int *panel_size)
 {
 	int row;
 
-	row = 0;
+	row = 1;
 	while (row < panel_size[0])
 	{
 		print_str(panel[row]);
