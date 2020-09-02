@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:06:26 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/01 12:26:20 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:06:01 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int			find_sqr_coordinates(
 	int *coordinates,
 	int max_size)
 {
-	printf("kabum\n");
 	int row;
 	int col;
 	int size;
@@ -40,15 +39,11 @@ int			find_sqr_coordinates(
 	col = coordinates[1];
 	is_there_a_valid_sqr = 0;
 	size = max_size;
-	printf("hi");
-	printf("------> [%d,%d] -> %c\n", panel_size[0], panel_size[1], panel[panel_size[0]][panel_size[1]]);
 	while (row < panel_size[0])
 	{
 		col = coordinates[1];
-		// printf("[%d,%d] -> %c\n", row, col, panel[row][col]);
 		while (col < panel_size[1])
 		{
-			printf("%c",panel[row][col]);
 			// while (is_sqr_valid(panel, coordinates, size))
 			// {
 			// 	is_there_a_valid_sqr = 1;
@@ -60,6 +55,5 @@ int			find_sqr_coordinates(
 		}
 		row++;
 	}
-	printf("hi");
 	return (is_there_a_valid_sqr);
 }

@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:16:23 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/08/31 20:33:41 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:06:11 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 	}
 	// panel_file_name = argv[1];
 	// print_str(create_array(argv[1]));
-	// printf("%c", create_panel(argv[1])[0][0]);
 	panel_n = 1;
 	while (panel_n < argc)
 	{
