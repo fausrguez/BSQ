@@ -6,13 +6,13 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 11:22:39 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:24:54 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers.h"
-#include "variables.h"
-#include "functions.h"
+#include "headers/headers.h"
+#include "headers/variables.h"
+#include "headers/functions.h"
 
 static	int		ft_file_size(char *file_name, int cnt)
 {
