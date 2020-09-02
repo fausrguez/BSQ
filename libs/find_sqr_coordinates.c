@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:06:26 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 11:06:01 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:10:06 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,12 @@ int			find_sqr_coordinates(
 	int *coordinates,
 	int max_size)
 {
-	int row;
-	int col;
-	int size;
-	int is_there_a_valid_sqr;
+	int		row;
+	int		col;
+	int		size;
+	int		is_there_a_valid_sqr;
 
 	row = coordinates[0];
-	col = coordinates[1];
 	is_there_a_valid_sqr = 0;
 	size = max_size;
 	while (row < panel_size[0])
@@ -51,7 +50,7 @@ int			find_sqr_coordinates(
 			// }
 			// if (size > *max_size)
 			// 	*max_size = not_a_norminette_fan(row, col, size, coordinates);
-			col ++;
+			col++;
 		}
 		row++;
 	}
