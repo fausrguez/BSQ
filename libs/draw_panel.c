@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:44:41 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:38:11 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:18:10 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,26 @@ static	void	initialize_panel_data(
 	t_panel_data *panel_data,
 	char *file_name)
 {
-	panel_data->coordinates->row = 0;
-	panel_data->coordinates->col = 1;
+	panel_data->coordinates_row = 0;
+	panel_data->coordinates_col = 1;
 	panel_data->sqr_size = 2;
 	panel_data->file_name = file_name;
 }
 
-int			draw_panel(char *panel_file_name)
+static	void	free_panel(char **panel, int rows)
+{
+	int row;
+
+	row = 0;
+	while (row < rows)
+	{
+		free(panel[row]);
+		row++;
+	}
+	free(panel);
+}
+
+int				draw_panel(char *panel_file_name)
 {
 	char			**panel;
 	char			*arr;
@@ -38,9 +51,9 @@ int			draw_panel(char *panel_file_name)
 	{
 		add_sqr_to_panel(panel, &panel_data);
 		print_panel(panel, &panel_data);
-		free(panel);
+		free_panel(panel, panel_data.panel_size_rows);
 		return (1);
 	}
-	free(panel);
+	free_panel(panel, panel_data.panel_size_rows);
 	return (0);
 }

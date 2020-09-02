@@ -6,12 +6,13 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 15:19:13 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 15:19:15 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:07:11 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/headers.h"
 #include "headers/variables.h"
+#include "headers/functions.h"
 
 static	int		ft_file_size(char *file_name, int buff_cnt)
 {
@@ -36,6 +37,7 @@ static	int		ft_file_size(char *file_name, int buff_cnt)
 		close(fd);
 		file_size = nchr;
 	}
+	free(buffer);
 	return (file_size);
 }
 

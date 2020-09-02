@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 12:00:56 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:29:38 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:00:54 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 #include "headers/structures.h"
 #include "headers/functions.h"
 
-static	int		fits_panel_row(t_panel_size panel_size,
+static	int		fits_panel_row(int rows,
 	int row,
 	int sqr_size)
 {
-	if (row + sqr_size <= panel_size.rows)
+	if (row + sqr_size <= rows)
 	{
 		return (1);
 	}
 	return (0);
 }
 
-static	int		fits_panel_col(t_panel_size panel_size,
+static	int		fits_panel_col(int cols,
 	int col,
 	int sqr_size)
 {
-	if (col + sqr_size <= panel_size.cols)
+	if (col + sqr_size <= cols)
 	{
 		return (1);
 	}
@@ -48,15 +48,15 @@ int				is_sqr_valid(
 
 	row = 0;
 	while (row < sqr_size &&
-		fits_panel_row(panel_data->panel_size, row, sqr_size))
+		fits_panel_row(panel_data->panel_size_rows, row, sqr_size))
 	{
 		col = 0;
 		while (col < sqr_size &&
-			fits_panel_col(panel_data->panel_size, col, sqr_size))
+			fits_panel_col(panel_data->panel_size_cols, col, sqr_size))
 		{
-			this_row = panel_data->coordinates->row + row;
-			this_col = panel_data->coordinates->col + col;
-			if (panel[this_row][this_col] == panel_data->panel_chars->obstacle)
+			this_row = panel_data->coordinates_row + row;
+			this_col = panel_data->coordinates_col + col;
+			if (panel[this_row][this_col] == panel_data->panel_chars_obstacle)
 			{
 				return (0);
 			}

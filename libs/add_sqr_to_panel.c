@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 14:43:40 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:36:42 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:01:21 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	add_sqr_to_panel(char **panel, t_panel_data *panel_data)
 		col = 0;
 		while (col < panel_data->sqr_size)
 		{
-			this_row = panel_data->coordinates->row + row;
-			this_col = panel_data->coordinates->col + col;
-			panel[this_row][this_col] = panel_data->panel_chars->sqr;
+			this_row = panel_data->coordinates_row + row;
+			this_col = panel_data->coordinates_col + col;
+			panel[this_row][this_col] = panel_data->panel_chars_sqr;
 			col++;
 		}
 		row++;
