@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:27:35 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:40:23 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:12:00 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,8 @@ char	get_empty_char(char *map_array);
 char	get_obst_char(char *map_array);
 char	get_sqr_char(char *map_array);
 char	*create_array(char *file_name);
+int		check_first_line(char *array);
+int		are_chars_printable(char *array);
+int		row_length(char *array);
+int		are_chars_valid(char *array, t_panel_characters *panel_chars);
 #endif
