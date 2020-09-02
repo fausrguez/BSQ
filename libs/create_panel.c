@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 11:24:54 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 14:32:08 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "headers/variables.h"
 #include "headers/functions.h"
 
-static	int		ft_file_size(char *file_name, int cnt)
+static	int		ft_file_size(char *file_name, int buff_cnt)
 {
 	int		fd;
 	int		nchr;
@@ -24,15 +24,15 @@ static	int		ft_file_size(char *file_name, int cnt)
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		fd = 0;
-	buffer = (char **)malloc(sizeof(char *) * cnt);
-	nchr = read(fd, buffer, cnt);
+	buffer = (char **)malloc(sizeof(char *) * buff_cnt);
+	nchr = read(fd, buffer, buff_cnt);
 	file_size = 0;
-	if (nchr == cnt)
+	if (nchr == buff_cnt)
 	{
 		close(fd);
-		return (ft_file_size(file_name, cnt * 2));
+		return (ft_file_size(file_name, buff_cnt * 2));
 	}
-	else if (nchr != cnt)
+	else if (nchr != buff_cnt)
 	{
 		close(fd);
 		file_size = nchr;
