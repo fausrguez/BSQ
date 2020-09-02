@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 10:52:19 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:18:55 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		get_col_num(char *map_array)
 	first_row_chars = i + 1;
 	while (map_array[first_row_chars + col_num] != '\n')
 		col_num++;
-	return (col_num);
+	return (col_num + 1);
 }
 
 int		*get_panel_size(char *map_array)
