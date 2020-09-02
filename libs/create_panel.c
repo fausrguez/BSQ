@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 10:35:31 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:25:22 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:01:53 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 static	void	update_panel_data(char *array, t_panel_data *panel_data)
 {
-	panel_data->panel_chars->obstacle = get_obst_char(array);
-	panel_data->panel_chars->empty = get_empty_char(array);
-	panel_data->panel_chars->sqr = get_sqr_char(array);
-	panel_data->panel_size.rows = get_row_num(array);
-	panel_data->panel_size.cols = get_col_num(array);
+	panel_data->panel_chars_obstacle = get_obst_char(array);
+	panel_data->panel_chars_empty = get_empty_char(array);
+	panel_data->panel_chars_sqr = get_sqr_char(array);
+	panel_data->panel_size_rows = get_row_num(array);
+	panel_data->panel_size_cols = get_col_num(array);
 }
 
 static	char	**create_panel_from_array(char *array, int rows, int cols)
@@ -58,7 +58,7 @@ char			**create_panel(char *array, t_panel_data *panel_data)
 	update_panel_data(array, panel_data);
 	panel = create_panel_from_array(
 		array,
-		panel_data->panel_size.rows,
-		panel_data->panel_size.cols);
+		panel_data->panel_size_rows,
+		panel_data->panel_size_cols);
 	return (panel);
 }

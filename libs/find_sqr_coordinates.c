@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 13:06:26 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 16:40:48 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:18:29 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static	void	update_panel_data(
 	int row,
 	int col)
 {
-	panel_data->coordinates->row = row;
-	panel_data->coordinates->row = col;
+	panel_data->coordinates_row = row;
+	panel_data->coordinates_col = col;
 	panel_data->sqr_size = sqr_size;
 }
 
-int			find_sqr_coordinates(
+int				find_sqr_coordinates(
 	char **panel,
 	t_panel_data *panel_data)
 {
@@ -35,12 +35,12 @@ int			find_sqr_coordinates(
 	int		is_there_a_valid_sqr;
 
 	is_there_a_valid_sqr = 0;
-	row = panel_data->coordinates->row;
+	row = panel_data->coordinates_row;
 	sqr_size = panel_data->sqr_size;
-	while (row < panel_data->panel_size.rows)
+	while (row < panel_data->panel_size_rows)
 	{
-		col = panel_data->coordinates->col;
-		while (col < panel_data->panel_size.cols)
+		col = panel_data->coordinates_col;
+		while (col < panel_data->panel_size_cols)
 		{
 			while (is_sqr_valid(panel, panel_data, sqr_size))
 			{

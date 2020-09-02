@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 15:31:36 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:12:05 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		get_row_num(char *map_array)
 	}
 	row_num_array[j] = '\0';
 	row_num = ft_atoi(row_num_array);
+	free(row_num_array);
 	return (row_num);
 }
 
