@@ -6,13 +6,12 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/01 21:55:12 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 10:52:19 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
-#include "headers/functions.h"
+#include "functions.h"
 
 int		ft_atoi(char *str)
 {
@@ -20,37 +19,38 @@ int		ft_atoi(char *str)
 	int i;
 
 	i = 0;
-	res = 1;
-	while (str[i] != '\0')
+	res = 0;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - 48);
-	   	i++;
+		i++;
 	}
 	return (res);
-}	
+}
 
 int		get_row_num(char *map_array)
 {
-	int i;
-	char *row_num_array;
-	int row_num;
-	int j;
+	int		i;
+	int		j;
+	int		row_num;
+	char	*row_num_array;
 
+	i = 0;
 	while (map_array[i] != '\n')
 		i++;
-	row_num_array = (int *)malloc(sizeof(int) * (i - 2));
+	row_num_array = (char *)malloc(sizeof(char) * (i - 2));
 	j = 0;
 	while (j <= (i - 3))
 	{
 		row_num_array[j] = map_array[j];
 		j++;
 	}
-	row_num_array = '/0';
-	row_num = ft_atoi(row_num_array[j]);
+	row_num_array[j] = '\0';
+	row_num = ft_atoi(row_num_array);
 	return (row_num);
 }
 
-int		get_col_num(char *map_array, int row_num)
+int		get_col_num(char *map_array)
 {
 	int col_num;
 	int first_row_chars;
@@ -65,7 +65,8 @@ int		get_col_num(char *map_array, int row_num)
 		col_num++;
 	return (col_num);
 }
-int		*get_panel_size(char **panel)
+
+int		*get_panel_size(char *map_array)
 {
 	int i;
 	int j;
