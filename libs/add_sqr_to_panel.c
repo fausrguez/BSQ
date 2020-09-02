@@ -6,29 +6,31 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 14:43:40 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 11:19:50 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:01:21 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/functions.h"
 
-void	add_sqr_to_panel(char **panel, int *coordinates, int size)
+void	add_sqr_to_panel(char **panel, t_panel_data *panel_data)
 {
-	int		i;
-	int		j;
-	char	sqr_char;
+	int		row;
+	int		col;
+	int		this_row;
+	int		this_col;
 
-	sqr_char = get_sqr_char(panel);
-	i = 0;
-	j = 0;
-	while (i < size)
+	row = 0;
+	col = 0;
+	while (row < panel_data->sqr_size)
 	{
-		j = 0;
-		while (j < size)
+		col = 0;
+		while (col < panel_data->sqr_size)
 		{
-			panel[coordinates[0] + i][coordinates[1] + j] = sqr_char;
-			j++;
+			this_row = panel_data->coordinates_row + row;
+			this_col = panel_data->coordinates_col + col;
+			panel[this_row][this_col] = panel_data->panel_chars_sqr;
+			col++;
 		}
-		i++;
+		row++;
 	}
 }

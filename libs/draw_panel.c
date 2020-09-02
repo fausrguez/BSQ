@@ -6,52 +6,54 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:44:41 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 11:02:50 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 21:18:10 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/headers.h"
 #include "headers/functions.h"
+#include "headers/structures.h"
 
-static void	set_default_coordinates(int **coordinates)
+static	void	initialize_panel_data(
+	t_panel_data *panel_data,
+	char *file_name)
 {
-	coordinates[0] = 1;
-	coordinates[1] = 0;
+	panel_data->coordinates_row = 0;
+	panel_data->coordinates_col = 1;
+	panel_data->sqr_size = 2;
+	panel_data->file_name = file_name;
 }
 
-static void	free_malloc(
-	char *arr,
-	char *panel_size,
-	int *coordinates,
-	char **panel)
+static	void	free_panel(char **panel, int rows)
 {
-	free(arr);
-	free(panel_size);
-	free(coordinates);
+	int row;
+
+	row = 0;
+	while (row < rows)
+	{
+		free(panel[row]);
+		row++;
+	}
 	free(panel);
 }
 
-int			draw_panel(char *panel_file_name)
+int				draw_panel(char *panel_file_name)
 {
-	char	**panel;
-	int		*panel_size;
-	int		*coordinates;
-	int		sqr_size;
-	char	*arr;
+	char			**panel;
+	char			*arr;
+	t_panel_data	panel_data;
 
-	coordinates = (int *)malloc(sizeof(int) * 2);
-	sqr_size = 2;
-	set_default_coordinates(coordinates);
-	arr = create_array(panel_file_name);
-	panel = create_panel(arr);
-	panel_size = get_panel_size(panel);
-	if (!find_sqr_coordinates(panel, panel_size, coordinates, sqr_size))
+	initialize_panel_data(&panel_data, panel_file_name);
+	arr = create_array(panel_data.file_name);
+	panel = create_panel(arr, &panel_data);
+	free(arr);
+	if (find_sqr_coordinates(panel, &panel_data))
 	{
-		free_malloc(arr, panel_size, coordinates, panel);
-		return (0);
+		add_sqr_to_panel(panel, &panel_data);
+		print_panel(panel, &panel_data);
+		free_panel(panel, panel_data.panel_size_rows);
+		return (1);
 	}
-	add_sqr_to_panel(panel, coordinates, sqr_size);
-	print_panel(panel, panel_size);
-	free_malloc(arr, panel_size, coordinates, panel);
-	return (1);
+	free_panel(panel, panel_data.panel_size_rows);
+	return (0);
 }

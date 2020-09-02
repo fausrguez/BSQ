@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   print_panel.c                                      :+:    :+:            */
+/*   structures.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/31 14:44:46 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 21:04:58 by farodrig      ########   odam.nl         */
+/*   Created: 2020/09/02 14:25:26 by farodrig      #+#    #+#                 */
+/*   Updated: 2020/09/02 20:58:53 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/structures.h"
-#include "headers/functions.h"
+#ifndef STRUCTURES_H
+# define STRUCTURES_H
 
-void	print_panel(char **panel, t_panel_data *panel_data)
+typedef	struct	s_panel_data
 {
-	int row;
+	int		coordinates_col;
+	int		coordinates_row;
+	int		panel_size_cols;
+	int		panel_size_rows;
+	char	*file_name;
+	int		sqr_size;
+	char	panel_chars_obstacle;
+	char 	panel_chars_empty;
+	char 	panel_chars_sqr;
+}				t_panel_data;
 
-	row = 0;
-	while (row < panel_data->panel_size_rows)
-	{
-		print_str(panel[row]);
-		row++;
-	}
-}
+#endif
