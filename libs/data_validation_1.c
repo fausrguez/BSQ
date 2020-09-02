@@ -6,11 +6,13 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 10:17:07 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 20:50:34 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 20:58:00 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		check_first_line(char *array);
+#include "headers/structures.h"
+
+int		check_first_line(char *array)
 {
 	int i;
 	int j;
@@ -20,7 +22,8 @@ int		check_first_line(char *array);
 		i++;
 	if (i < 4)
 		return (0);
-	if (array[i - 1] == array[i - 2] || array[i - 2] == array[i - 3] || array[i - 3] == array[i - 1])
+	if (array[i - 1] == array[i - 2] || array[i - 2] == array[i - 3] || array[i
+			- 3] == array[i - 1])
 		return (0);
 	j = 0;
 	while (j < (i - 3))
@@ -54,24 +57,17 @@ int		row_length(char *array)
 
 	i = 0;
 	counter = 0;
-	while (array[i] != '\n')
-	{
+	while (array[i++] != '\n')
 		counter++;
-		i++;
-	}
 	i++;
 	j = 0;
-	while (array[i] != '\0')
+	while (array[i++] != '\0')
 	{
 		j = 0;
-		while (array[i] != '\n')
-		{
-			i++;
+		while (array[i++] != '\n')
 			j++;
-		}
 		if (j != counter)
 			return (0);
-		i++;
 	}
 	return (1);
 }
@@ -83,7 +79,9 @@ int		are_chars_valid(char *array, t_panel_characters *panel_chars)
 	i = 0;
 	while (array[i] != '\0')
 	{
-		if ((array[i] != panel_chars->obstacle || array[i] != panel_chars->empty || array[i] != panel_chars->sqr) && array[i] != '\n')
+		if ((array[i] != panel_chars->obstacle || array[i] !=
+					panel_chars->empty || array[i] != panel_chars->sqr) &&
+				array[i] != '\n')
 			return (0);
 		i++;
 	}
