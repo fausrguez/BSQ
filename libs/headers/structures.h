@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 14:25:26 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 14:30:37 by farodrig      ########   odam.nl         */
+/*   Updated: 2020/09/02 14:41:43 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ typedef	struct	s_coordinates
 	int col;
 }				t_coordinates;
 
-typedef	struct	s_data
+typedef	struct	s_panel_data
 {
-	t_coordinates		coordinates[2];
-	t_coordinates		panel_size[2];
+	t_coordinates		coordinates;
+	t_coordinates		panel_size;
 	char				*panel_name;
 	int					sqr_size;
 	t_panel_characters	panel_chars;
-}				t_data;
+}				t_panel_data;
 
 #endif
