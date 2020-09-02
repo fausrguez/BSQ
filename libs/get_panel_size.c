@@ -6,12 +6,12 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/02 11:18:55 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:20:16 by dgiannop      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "functions.h"
+#include "headers/functions.h"
 
 int		ft_atoi(char *str)
 {
