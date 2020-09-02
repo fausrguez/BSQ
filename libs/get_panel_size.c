@@ -6,7 +6,7 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/09/01 21:10:52 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/01 21:55:12 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		get_row_num(char *map_array)
 	int row_num;
 	int j;
 
-	while (i != '\n')
+	while (map_array[i] != '\n')
 		i++;
 	row_num_array = (int *)malloc(sizeof(int) * (i - 2));
 	j = 0;
@@ -57,7 +57,7 @@ int		get_col_num(char *map_array, int row_num)
 	int i;
 
 	i = 0;
-	while (i != '\n')
+	while (map_array[i] != '\n')
 		i++;
 	col_num = 0;
 	first_row_chars = i + 1;
