@@ -6,7 +6,7 @@
 /*   By: farodrig <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 12:00:56 by farodrig      #+#    #+#                 */
-/*   Updated: 2020/09/02 12:46:28 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 14:36:11 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,26 @@ int		is_sqr_valid(
 	int *coordinates,
 	int size)
 {
+	int		initial_row;
+	int		initial_col;
 	int		row;
 	int		col;
-	int		i;
-	int		j;
 	char	obstacle;
 
 	obstacle = get_obst_char(array);
-	row = coordinates[0];
-	col = coordinates[1];
-	i = 0;
-	while ((i < size) && (fits_panel_row(array, i, size)))
+	initial_row = coordinates[0];
+	initial_col = coordinates[1];
+	row = 0;
+	while ((row < size) && (fits_panel_row(array, row, size)))
 	{
-		j = 0;
-		while ((j < size) && (fits_panel_col(array, j, size)))
+		col = 0;
+		while ((col < size) && (fits_panel_col(array, col, size)))
 		{
-			if (panel[row + i][col + j] == obstacle)
+			if (panel[initial_row + row][initial_col + col] == obstacle)
 				return (0);
-			j++;
+			col++;
 		}
-		i++;
+		row++;
 	}
 	return (1);
 }
