@@ -6,32 +6,41 @@
 /*   By: dgiannop <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:03:06 by dgiannop      #+#    #+#                 */
-/*   Updated: 2020/08/31 16:25:01 by dgiannop      ########   odam.nl         */
+/*   Updated: 2020/09/02 11:04:28 by farodrig      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/functions.h"
 
-char	get_empty_char(char **map_array)
+char	get_empty_char(char *map_array)
 {
-	char empty;
+	int		i;
+	char	empty;
 
-	empty = map_array[0][1];
+	while (map_array[i] != '\n')
+		i++;
+	empty = map_array[i - 2];
 	return (empty);
 }
 
-char	get_obst_char(char **map_array)
+char	get_obst_char(char *map_array)
 {
-	char obstacle;
+	int		i;
+	char	obstacle;
 
-	obstacle = map_array[0][2];
+	while (map_array[i] != '\n')
+		i++;
+	obstacle = map_array[i - 1];
 	return (obstacle);
 }
 
-char	get_sqr_char(char **map_array)
+char	get_sqr_char(char *map_array)
 {
-	char square;
+	int		i;
+	char	square;
 
-	square = map_array[0][3];
+	while (map_array[i] != '\n')
+		i++;
+	square = map_array[i];
 	return (square);
 }
